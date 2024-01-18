@@ -12,7 +12,7 @@ const app = express();
 const port = process.env.PORT || 5050;
 
 connectDb();
-app.use(cors());
+app.use(cors({ origin: 'https://test-server-iejg.onrender.com', credentials: true }));
 app.use(express.json());
 app.get("/", (req, res) => {
   res.send("Server is started...");

@@ -7,7 +7,7 @@ function App() {
   const [password,setPassword] = useState("")
   const [confirmPassword,setConfirmPassword] = useState("")
   const handleClick = async() =>{
-    const response = await fetch("http://localhost:5050/sign-up",{
+    const response = await fetch("https://test-server-iejg.onrender.com/sign-up",{
       method:"post",
       body:JSON.stringify({email, password, confirmPassword}),
       headers:{
