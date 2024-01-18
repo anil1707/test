@@ -12,7 +12,7 @@ const app = express();
 const port = process.env.PORT || 5050;
 
 connectDb();
-app.use(cors({ origin: 'http://localhost:3000', credentials: true }));
+app.use(cors({ origin: 'https://65a99e8e7283050b1d1a582b--tangerine-flan-894cfa.netlify.app', credentials: true }));
 app.use(express.json());
 app.get("/", (req, res) => {
   res.send("Server is started...");
