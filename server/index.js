@@ -12,7 +12,7 @@ const app = express();
 const port = process.env.PORT || 5050;
 
 connectDb();
-app.use(cors({ origin: 'https://test-server-iejg.onrender.com', credentials: true }));
+app.use(cors({ origin: 'http://localhost:3000', credentials: true }));
 app.use(express.json());
 app.get("/", (req, res) => {
   res.send("Server is started...");
@@ -49,6 +49,11 @@ app.post("/sign-up", async (req, res) => {
     console.log(error)
   }
 });
+
+app.get('/getUser', async (req,res)=>{
+  const data = await User.find()
+  res.send({data})
+})
 
 app.listen(port, (err) => {
   if (err) {
